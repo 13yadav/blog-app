@@ -4,15 +4,16 @@ import { Controller } from "react-hook-form";
 export default function RTE({ name, control, label, defaultValue = "" }) {
   return (
     <div className="w-full">
-      <label htmlFor={name} className="block text-sm font-medium text-gray-700">
-        {label}
-      </label>
+      <label htmlFor={name} className="block text-sm font-medium text-[#444554] mb-1">
+          {label}
+        </label>
       <Controller
         name={name || "content"}
         control={control}
         render={({ field: { onChange } }) => (
           <Editor
             initialValue={defaultValue}
+            apiKey='x3tw67d38ta5tpyeflzv5qztjweo8j4s6b1i8swg7g3lef4e'
             init={{
               initialValue: defaultValue,
               height: 500,

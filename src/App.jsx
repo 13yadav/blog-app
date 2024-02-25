@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
@@ -25,11 +24,11 @@ function App() {
   }, []);
 
   if (loading) {
-    return <h1 className="text-3xl font-bold underline">Loading...</h1>;
+    return <h1 className="text-3xl font-bold underline text-[#E5D0CC]">Loading...</h1>;
   }
 
   return (
-    <div className="min-h-screen flex flex-wrap content-between bg-gray-700">
+    <div className="min-h-screen flex flex-wrap content-between bg-[#BFACB5]">
       <div className="w-full block">
         <Header />
         <main><Outlet /></main>

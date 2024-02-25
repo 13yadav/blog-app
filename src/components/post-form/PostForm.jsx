@@ -11,13 +11,13 @@ export default function PostForm({ post }) {
     useForm({
       defaultValues: {
         title: post?.title || "",
-        slug: post?.slug || "",
+        slug: post?.$id || "",
         content: post?.content || "",
         status: post?.status || true,
       },
     });
 
-  const userData = useSelector((state) => state.user.userData);
+  const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
     try {
@@ -134,7 +134,7 @@ export default function PostForm({ post }) {
           </div>
         )}
         <Select
-          options={[true, false]}
+          options={[{label: "active", value: true}, {label: "inactive", value: false}]}
           label="Status"
           className="mb-4"
           {...register("status", { required: true })}

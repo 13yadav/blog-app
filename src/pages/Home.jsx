@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config";
 import { Container, PostCard } from "../components";
+import { useSelector } from "react-redux";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
+  const authState = useSelector((state) => state.auth.status);
 
   useEffect(() => {
-    appwriteService.getPosts().then((posts) => {
-      if (posts) {
-        setPosts(posts.documents);
-      }
-    });
-  }, []);
+    if (authState) {
+      appwriteService.getPosts().then((posts) => {
+        if (posts) {
+          setPosts(posts.documents);
+        }
+      });
+    }
+  }, [authState]);
 
   if (posts.length === 0) {
     return (
@@ -19,8 +23,8 @@ export default function Home() {
         <Container>
           <div className="flex flex-wrap">
             <div className="p-2 w-full">
-              <h1 className="text-2xl font-bold hover:text-gray-500">
-                Login to read posts
+              <h1 className="text-2xl font-bold text-[#172121]">
+                {authState ? "No Posts to show" : "Login to read posts"}
               </h1>
             </div>
           </div>

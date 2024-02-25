@@ -29,17 +29,17 @@ function Signup() {
   return (
     <div className="flex items-center justify-center">
       <div
-        className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
+        className={`mx-auto w-full max-w-lg bg-[#172121] rounded-xl p-10 border border-black/10`}
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
             <Logo width="100%" />
           </span>
         </div>
-        <h2 className="text-center text-2xl font-bold leading-tight">
+        <h2 className="text-center text-2xl font-bold leading-tight text-[#E5D0CC]">
           Sign up to create account
         </h2>
-        <p className="mt-2 text-center text-base text-black/60">
+        <p className="mt-2 text-center text-base text-black/60 text-[#BFACB5] mb-3">
           Already have an account?&nbsp;
           <Link
             to="/login"
@@ -53,14 +53,16 @@ function Signup() {
         <form onSubmit={handleSubmit(signup)}>
           <div className="space-y-5">
             <Input
-              label="Full Name: "
+              label="Full Name"
+              labelClass="text-[#BFACB5]"
               placeholder="Enter your full name"
               {...register("name", {
                 required: true,
               })}
             />
             <Input
-              label="Email: "
+              label="Email"
+              labelClass="text-[#BFACB5]"
               placeholder="Enter your email"
               type="email"
               {...register("email", {
@@ -73,14 +75,15 @@ function Signup() {
               })}
             />
             <Input
-              label="Password: "
+              label="Password"
+              labelClass="text-[#BFACB5]"
               type="password"
               placeholder="Enter your password"
               {...register("password", {
                 required: true,
               })}
             />
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full bg-[#E5D0CC] text-[#172121] mt-3">
               Create Account
             </Button>
           </div>

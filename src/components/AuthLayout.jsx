@@ -21,5 +21,5 @@ export default function AuthLayout({ children, authentication = true }) {
     setLoader(false);
   }, [authStatus, navigate, authentication]);
 
-  return loader ? <h1>Loading...</h1> : <>{children}</>;
+  return loader ? <h1 className="text-[#E5D0CC]">Loading...</h1> : <>{children}</>;
 }

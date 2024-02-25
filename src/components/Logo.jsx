@@ -1,11 +1,16 @@
-function Logo({ width = '100px', ...props }) {
+import appLogo from "../assets/logo.svg"
+
+function Logo({ height = '60px', ...props }) {
     return (
         <img
             alt="Logo"
-            src="/logo.svg"
-            width={width}
+            src={appLogo}
+            style={{height: height}}
             {...props}
         />
+        // <div>
+        //     <h5 className="text-xl font-bold">Blog App</h5>
+        // </div>
     )
 }
 

@@ -30,7 +30,8 @@ export class Service {
         }
       );
     } catch (error) {
-      return error;
+      console.error("Error in createPost ::: ", error);
+      return null;
     }
   }
 
@@ -48,7 +49,8 @@ export class Service {
         }
       );
     } catch (error) {
-      return error;
+      console.error("Error in updatePost ::: ", error);
+      return null;
     }
   }
 
@@ -61,7 +63,8 @@ export class Service {
       );
       return true;
     } catch (error) {
-      return error;
+      console.error("Error in deletePost ::: ", error);
+      return null;
     }
   }
 
@@ -73,7 +76,8 @@ export class Service {
         slug
       );
     } catch (error) {
-      return error;
+      console.error("Error in getPost ::: ", error);
+      return null;
     }
   }
 
@@ -85,7 +89,8 @@ export class Service {
         queries
       );
     } catch (error) {
-      return error;
+      console.error("Error in getPosts ::: ", error);
+      return null;
     }
   }
 
@@ -97,7 +102,8 @@ export class Service {
         file
       );
     } catch (error) {
-      return error;
+      console.error("Error in uploadFile ::: ", error);
+      return null;
     }
   }
 
@@ -106,7 +112,8 @@ export class Service {
       await this.storage.deleteFile(config.appwriteBucketId, fileId);
       return true;
     } catch (error) {
-      return error;
+      console.error("Error in deleteFile ::: ", error);
+      return null;
     }
   }
 
